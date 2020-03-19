@@ -8,7 +8,7 @@ import org.springframework.boot.runApplication
 class BlogTutorialApplication
 
 fun main(args: Array<String>) {
-	runApplication<BlogTutorialApplication>(*args) {
-		setBannerMode(Banner.Mode.OFF)
-	}
+    runApplication<BlogTutorialApplication>(*args) {
+        setBannerMode(Banner.Mode.OFF)
+    }
 }
