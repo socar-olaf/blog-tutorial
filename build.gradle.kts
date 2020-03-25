@@ -6,6 +6,7 @@ plugins {
 	kotlin("jvm") version "1.3.61"
 	kotlin("plugin.spring") version "1.3.61"
 	kotlin("plugin.jpa") version "1.3.61"
+	kotlin("kapt") version "1.3.61"
 }
 
 allOpen {
@@ -40,7 +41,13 @@ dependencies {
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
+		exclude(module = "junit")
+		exclude(module = "mockito-core")
 	}
+	//testImplementation("org.junit.jupiter:junit-jupiter-api")
+	//testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+	testImplementation("com.ninja-squad:springmockk:2.0.0")
+	kapt("org.springframework.boot:spring-boot-configuration-processor")
 }
 
 tasks.withType<Test> {
