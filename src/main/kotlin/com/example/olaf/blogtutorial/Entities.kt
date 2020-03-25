@@ -7,7 +7,7 @@ import javax.persistence.Id
 import javax.persistence.ManyToOne
 
 @Entity
-class Article(
+data class Article(
     var title: String,
     var headline: String,
     var content: String,
@@ -18,10 +18,10 @@ class Article(
 )
 
 @Entity
-class User(
+data class User(
     var login: String,
-    var firstname: String,
-    var lastname: String,
+    var firstName: String,
+    var lastName: String,
     var description: String? = null,
     @Id @GeneratedValue var id: Long? = null
 )
