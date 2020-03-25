@@ -15,7 +15,7 @@ class ArticleController(private val repository: ArticleRepository) {
 
     @GetMapping("/{slug}")
     fun findOne(@PathVariable slug: String) =
-        repository.findBySlug(slug) ?: ResponseStatusException(HttpStatus.NOT_FOUND, "This article does not exist!!")
+        repository.findBySlug(slug) ?: ResponseStatusException(HttpStatus.NO_CONTENT, "This article does not exist!!")
 }
 
 @RestController
@@ -26,5 +26,5 @@ class UserController(private val repository: UserRepository) {
 
     @GetMapping("/{login}")
     fun findOne(@PathVariable login: String) =
-        repository.findByLogin(login) ?: ResponseStatusException(HttpStatus.NOT_FOUND, "This user does not exist!!")
+        repository.findByLogin(login) ?: ResponseStatusException(HttpStatus.NO_CONTENT, "This user does not exist!!")
 }
